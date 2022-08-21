@@ -1,0 +1,434 @@
+:root {
+  --box-width: 150px;
+  --x-gap: 18rem;
+  --z-gap: 200px;
+  --color1: #b8a9a948;
+  --color2: #00ffff86;
+  --color3: #ff910086;
+  --color4: #011c9686;
+  --color5: #79b10186;
+  --color6: #e1786586;
+  --color7: #fa0e0e86;
+  --color8: #e1ff0086;
+  --color9: #3be65d86;
+  --color10: #1be2c486;
+  --color11: #1b8fe286;
+  --color12: #ff00ee86;
+}
+body {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  user-select: none;
+}
+div#controls {
+  position: absolute;
+  right: 20;
+  display: flex;
+  top: 20;
+}
+div#controls button {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: none;
+  color: #fff;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+div#controls button.active {
+  background-color: #2200ff6e;
+  animation: changebgColor 15s ease infinite;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#cube {
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+  box-shadow: 0 0 70px 55px #2200ff6e;
+  animation: rotate 15s ease infinite;
+}
+figure {
+  position: absolute;
+  height: var(--box-width);
+  width: var(--box-width);
+}
+#cube > :nth-child(1),
+#cube > :nth-child(2),
+#cube > :nth-child(3),
+#cube > :nth-child(4) {
+  transform-origin: 0% 0%;
+  background-color: var(--color1);
+}
+#cube > :nth-child(1) {
+  transform: translateX(-50%)
+    translateZ(calc(0px - var(--z-gap) * 0.5 - var(--box-width))) rotateX(90deg);
+  width: calc(var(--x-gap));
+}
+#cube > :nth-child(2) {
+  transform: translateX(-50%) translateZ(calc(0px + var(--z-gap) * 0.5))
+    rotateX(90deg);
+  width: calc(var(--x-gap));
+}
+#cube > :nth-child(3) {
+  transform: translateX(calc(0px - var(--box-width) - var(--x-gap) * 0.5))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateX(90deg);
+  height: calc(var(--z-gap));
+}
+#cube > :nth-child(4) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateX(90deg);
+  height: calc(var(--z-gap));
+}
+
+/* 1st Cuboid */
+#cube > :nth-child(5) {
+  transform: translateY(calc(0px - var(--box-width)))
+    translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px - var(--z-gap) * 0.5));
+  background-color: var(--color2);
+}
+#cube > :nth-child(6) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px - var(--z-gap) * 0.5));
+  background-color: var(--color3);
+}
+#cube > :nth-child(7) {
+  transform: translateY(calc(0px - var(--box-width)))
+    translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px - var(--z-gap) * 0.5 - var(--box-width)));
+  background-color: var(--color4);
+}
+#cube > :nth-child(8) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px - var(--z-gap) * 0.5 - var(--box-width)));
+  background-color: var(--color5);
+}
+#cube > :nth-child(9) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateY(calc(0px - var(--box-width) * 2))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateX(90deg);
+  background-color: var(--color10);
+}
+#cube > :nth-child(10) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateY(calc(0px - var(--box-width)))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateX(90deg);
+  background-color: var(--color11);
+}
+#cube > :nth-child(11) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateX(90deg);
+  background-color: var(--color12);
+}
+#cube > :nth-child(12) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5))
+    translateY(calc(0px - var(--box-width)))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateY(90deg);
+  background-color: var(--color6);
+}
+#cube > :nth-child(13) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateY(90deg);
+  background-color: var(--color9);
+}
+#cube > :nth-child(14) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateY(90deg);
+  background-color: var(--color7);
+}
+#cube > :nth-child(15) {
+  transform: translateY(calc(0px - var(--box-width)))
+    translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateY(90deg);
+  background-color: var(--color8);
+}
+
+/*? 2nd Cuboid */
+#cube > :nth-child(16) {
+  transform: translateY(calc(0px - var(--box-width)))
+    translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px - var(--z-gap) * 0.5));
+  background-color: var(--color2);
+}
+#cube > :nth-child(17) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px - var(--z-gap) * 0.5));
+  background-color: var(--color3);
+}
+#cube > :nth-child(18) {
+  transform: translateY(calc(0px - var(--box-width)))
+    translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px - var(--z-gap) * 0.5 - var(--box-width)));
+  background-color: var(--color4);
+}
+#cube > :nth-child(19) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px - var(--z-gap) * 0.5 - var(--box-width)));
+  background-color: var(--color5);
+}
+#cube > :nth-child(20) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateY(calc(0px - var(--box-width) * 2))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateX(90deg);
+  background-color: var(--color10);
+}
+#cube > :nth-child(21) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateY(calc(0px - var(--box-width)))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateX(90deg);
+  background-color: var(--color11);
+}
+#cube > :nth-child(22) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateX(90deg);
+  background-color: var(--color12);
+}
+#cube > :nth-child(23) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5 + var(--box-width)))
+    translateY(calc(0px - var(--box-width)))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateY(90deg);
+  background-color: var(--color6);
+}
+#cube > :nth-child(24) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5 + var(--box-width)))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateY(90deg);
+  background-color: var(--color9);
+}
+#cube > :nth-child(25) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateY(90deg);
+  background-color: var(--color7);
+}
+#cube > :nth-child(26) {
+  transform: translateY(calc(0px - var(--box-width)))
+    translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px - var(--z-gap) * 0.5)) rotateY(90deg);
+  background-color: var(--color8);
+}
+
+/*? 3rd Cuboid */
+
+#cube > :nth-child(27) {
+  transform: translateY(calc(0px - var(--box-width)))
+    translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width)));
+  background-color: var(--color2);
+}
+#cube > :nth-child(28) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width)));
+  background-color: var(--color3);
+}
+#cube > :nth-child(29) {
+  transform: translateY(calc(0px - var(--box-width)))
+    translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px + var(--z-gap) * 0.5));
+  background-color: var(--color4);
+}
+#cube > :nth-child(30) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px + var(--z-gap) * 0.5));
+  background-color: var(--color5);
+}
+#cube > :nth-child(31) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateY(calc(0px - var(--box-width) * 2))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateX(90deg);
+  background-color: var(--color10);
+}
+#cube > :nth-child(32) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateY(calc(0px - var(--box-width)))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateX(90deg);
+  background-color: var(--color11);
+}
+#cube > :nth-child(33) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateX(90deg);
+  background-color: var(--color12);
+}
+#cube > :nth-child(34) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5))
+    translateY(calc(0px - var(--box-width)))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateY(90deg);
+  background-color: var(--color6);
+}
+#cube > :nth-child(35) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateY(90deg);
+  background-color: var(--color9);
+}
+#cube > :nth-child(36) {
+  transform: translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateY(90deg);
+  background-color: var(--color7);
+}
+#cube > :nth-child(37) {
+  transform: translateY(calc(0px - var(--box-width)))
+    translateX(calc(0px - var(--x-gap) * 0.5 - var(--box-width)))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateY(90deg);
+  background-color: var(--color8);
+}
+
+/* fourth */
+#cube > :nth-child(38) {
+  transform: translateY(calc(0px - var(--box-width)))
+    translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width)));
+  background-color: var(--color2);
+}
+#cube > :nth-child(39) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width)));
+  background-color: var(--color3);
+}
+#cube > :nth-child(40) {
+  transform: translateY(calc(0px - var(--box-width)))
+    translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px + var(--z-gap) * 0.5));
+  background-color: var(--color4);
+}
+#cube > :nth-child(41) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px + var(--z-gap) * 0.5));
+  background-color: var(--color5);
+}
+#cube > :nth-child(42) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateY(calc(0px - var(--box-width) * 2))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateX(90deg);
+  background-color: var(--color10);
+}
+#cube > :nth-child(43) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateY(calc(0px - var(--box-width)))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateX(90deg);
+  background-color: var(--color11);
+}
+#cube > :nth-child(44) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateX(90deg);
+  background-color: var(--color12);
+}
+#cube > :nth-child(45) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5 + var(--box-width)))
+    translateY(calc(0px - var(--box-width)))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateY(90deg);
+  background-color: var(--color6);
+}
+#cube > :nth-child(46) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5 + var(--box-width)))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateY(90deg);
+  background-color: var(--color9);
+}
+#cube > :nth-child(47) {
+  transform: translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateY(90deg);
+  background-color: var(--color7);
+}
+#cube > :nth-child(48) {
+  transform: translateY(calc(0px - var(--box-width)))
+    translateX(calc(0px + var(--x-gap) * 0.5))
+    translateZ(calc(0px + var(--z-gap) * 0.5 + var(--box-width))) rotateY(90deg);
+  background-color: var(--color8);
+}
+
+#cube > :nth-child(9),
+#cube > :nth-child(20),
+#cube > :nth-child(31),
+#cube > :nth-child(42),
+#cube > :nth-child(10),
+#cube > :nth-child(21),
+#cube > :nth-child(32),
+#cube > :nth-child(43),
+#cube > :nth-child(11),
+#cube > :nth-child(22),
+#cube > :nth-child(33),
+#cube > :nth-child(44) {
+  transform-origin: 100% 100%;
+}
+#cube > :nth-child(14),
+#cube > :nth-child(15),
+#cube > :nth-child(25),
+#cube > :nth-child(26),
+#cube > :nth-child(36),
+#cube > :nth-child(37),
+#cube > :nth-child(47),
+#cube > :nth-child(48),
+#cube > :nth-child(12),
+#cube > :nth-child(13),
+#cube > :nth-child(23),
+#cube > :nth-child(24),
+#cube > :nth-child(34),
+#cube > :nth-child(35),
+#cube > :nth-child(45),
+#cube > :nth-child(46) {
+  transform-origin: 0% 0%;
+}
+
+@keyframes changebgColor {
+  from,
+  to {
+    background-color: #2200ff6e;
+  }
+  20% {
+    background-color: magenta;
+  }
+  40% {
+    background-color: #00b7ff;
+  }
+  60% {
+    background-color: #ff6200;
+  }
+  80% {
+    background-color: #ff0033;
+  }
+}
+
+@keyframes rotate {
+  from,
+  to {
+    transform: rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 0 70px 55px #2200ff6e;
+  }
+  10% {
+    transform: rotateX(40deg) rotateY(-15deg);
+  }
+  20% {
+    transform: rotateX(20deg) rotateY(-65deg);
+    box-shadow: 0 0 70px 55px magenta;
+  }
+  30% {
+    transform: rotateX(340deg) rotateY(85deg);
+  }
+  40% {
+    transform: rotateX(5deg) rotateY(265deg);
+    box-shadow: 0 0 70px 55px #00b7ff;
+  }
+  50% {
+    transform: rotateX(-156deg) rotateY(-55deg);
+  }
+  60% {
+    transform: rotateX(-30deg) rotateY(60deg);
+    box-shadow: 0 0 70px 55px #ff6200;
+  }
+  70% {
+    transform: rotateX(220deg) rotateY(20deg);
+  }
+  80% {
+    transform: rotateX(-10deg) rotateY(-340deg);
+    box-shadow: 0 0 70px 55px #ff0033;
+  }
+  90% {
+    transform: rotateX(10deg) rotateY(50deg);
+  }
+}
